@@ -19,7 +19,7 @@ class CreateBondTypesTable extends Migration
             $table->integer('status')->default(0);
             $table->string('first_prize')->nullable();
             $table->string('second_prize')->nullable();
-            $table->string('thirs_prize')->nullable();
+            $table->string('third_prize')->nullable();
             $table->SoftDeletes();
             $table->timestamps();
         });

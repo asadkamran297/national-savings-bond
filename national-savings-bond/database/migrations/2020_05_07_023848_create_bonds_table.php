@@ -15,7 +15,7 @@ class CreateBondsTable extends Migration
     {
         Schema::create('bonds', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('bond_type_id')->nullable();
+            $table->unsignedBigInteger('bond_type_id')->nullable();
             $table->string('serial_no')->nullable();
             $table->date('start_date')->nullable();
             $table->SoftDeletes();

@@ -15,7 +15,15 @@ class CreateBondSchedulesTable extends Migration
     {
         Schema::create('bond_schedules', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('bond_type_id')->nullable();
+            $table->date('schedule_date')->bullable();
+            $table->string('draw_number')->bullable();
+            $table->SoftDeletes();
             $table->timestamps();
+
+            $table->foreign('bond_type_id')
+                  ->references('id')->on('bond_types')
+                  ->onDelete('cascade');
         });
     }
 

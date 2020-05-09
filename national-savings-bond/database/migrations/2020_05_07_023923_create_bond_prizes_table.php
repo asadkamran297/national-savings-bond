@@ -15,7 +15,19 @@ class CreateBondPrizesTable extends Migration
     {
         Schema::create('bond_prizes', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('bond_id')->nullable();
+            $table->unsignedBigInteger('bond_schedule_id')->nullable();
+            $table->string('prize_type')->bullable();
+            $table->SoftDeletes();
             $table->timestamps();
+
+            $table->foreign('bond_id')
+                  ->references('id')->on('bonds')
+                  ->onDelete('cascade');
+
+            $table->foreign('bond_schedule_id')
+                  ->references('id')->on('bond_schedules')
+                  ->onDelete('cascade');
         });
     }
 
