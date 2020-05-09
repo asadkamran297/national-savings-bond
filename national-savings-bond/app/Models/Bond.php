@@ -22,7 +22,9 @@ class Bond extends Model
      * @var array
      */
     protected $fillable = [
-        "bond_type_id", "serial_no", "start_date"
+        "bond_type_id", 
+        "serial_no", 
+        "start_date"
     ];
 
     
