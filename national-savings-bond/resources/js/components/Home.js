@@ -1,16 +1,14 @@
 import React,{Component} from "react";
 import ReactDOM from 'react-dom';
 
-
-export default function class Example extends Component {
-	render()
-	{
-		return (
-          
-        );
-	}
+export default function Home() {
+    return (
+        <div>
+           Hell
+        </div>
+    );
 }
 
 if (document.getElementById('example')) {
-    ReactDOM.render(<Example />, document.getElementById('example'));
+    ReactDOM.render(<Home />, document.getElementById('example'));
 }
