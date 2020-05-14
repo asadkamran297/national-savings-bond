@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
@@ -22,8 +21,7 @@ define('LARAVEL_START', microtime(true));
 |
 */
 
-
-require __DIR__.'/national-savings-bond/vendor/autoload.php';
+require __DIR__.'/../vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -37,16 +35,7 @@ require __DIR__.'/national-savings-bond/vendor/autoload.php';
 |
 */
 
-$app = require_once __DIR__.'/national-savings-bond/bootstrap/app.php';
-
-// echo "Laravel - A PHP Framework For Web Artisans";
-// die();
-$base_dir = __DIR__;
-
-$app->bind('path.public',function() use($base_dir){
-    return $base_dir;
-});
-
+$app = require_once __DIR__.'/../bootstrap/app.php';
 
 /*
 |--------------------------------------------------------------------------
