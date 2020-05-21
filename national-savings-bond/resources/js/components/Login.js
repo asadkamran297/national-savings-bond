@@ -19,9 +19,9 @@ export default class Login extends Component{
                 <meta name="author" content=""/>
                 <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon.png') }}"/>
                 <title>Teksopt | login</title>
-                <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+                <link href="../assets/plugins/bootstrap/css/bootstrap.min.css')" rel="stylesheet"/>
                 <link href="../css/pages/login-register-lock.css" rel="stylesheet"/>
-                <link href="../css/style.css" rel="stylesheet"/>
+                <link href="../css/style.css')" rel="stylesheet"/>
                 
                 <link href="../css/colors/default-dark.css" id="theme" rel="stylesheet"/>
             </head>

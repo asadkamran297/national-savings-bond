@@ -1,96 +1,61 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
 
-        <title>Laravel</title>
+            <head>
+                <meta charset="utf-8"/>
+                <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <meta name="description" content=""/>
+                <meta name="author" content=""/>
+                <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon.png') }}"/>
+                <title>Teksopt | login</title>
+                <link href="{{ asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet"/>
+                <link href="{{ asset('css/pages/login-register-lock.css') }}" rel="stylesheet"/>
+                <link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
+                
+                <link href="{{ asset('css/colors/default-dark.css') }}" id="theme" rel="stylesheet"/>
+            </head>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+            <body>
 
-        <!-- Mix Scss -->
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+                <section id="wrapper" class="login-register login-sidebar" >
+                    <div class="login-box card">
+                        <div class="card-body">
+                            <form class="form-horizontal form-material" id="loginform" method="post">
+                                <a href="javascript:void(0)" class="text-center db"><img src="{{ asset('assets/images/logo-icon.png') }}" alt="Home" /><br/><img src="{{ asset('assets/images/logo-text.png') }}" alt="Home" /></a>
+                                <div class="form-group m-t-20">
+                                    <div class="col-xs-12">
+                                        <input class="form-control" type="email" name="email" required="email" placeholder="Email"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        <input class="form-control" name="password" type="password" required="" placeholder="Password"/>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-md-12">
+                                        <div class="checkbox checkbox-primary pull-left p-t-0">
+                                            <input id="checkbox-signup" name="remember" value="1" type="checkbox" class="filled-in chk-col-light-blue"/>
+                                            <label for="checkbox-signup"> Remember me </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group text-center m-t-20">
+                                    <div class="col-xs-12">
+                                        <button class="btn btn-info btn-lg btn-block text-uppercase btn-rounded" type="submit">Log In</button>
+                                    </div>
+                                </div>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+                            </form>
 
-            .full-height {
-                height: 100vh;
-            }
+                        </div>
+                    </div>
+                </section>
+                <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
+                <script src="{{ asset('assets/plugins/bootstrap/js/popper.min.js') }}"></script>
+                <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+                
+            </body>
 
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="example">
-            
-        </div>
-    </body>
-    <script src="/js/app.js"></script>
-</html>
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
-                <div id="example"></div>
-            </div>
-        </div>
-
-        <!-- <script src="{{ asset('js/app.js') }}"></script> -->
-    </body>
-    <script src="js/app.js"></script>
-</html>
+            </html>

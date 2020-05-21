@@ -33050,111 +33050,101 @@ var Home = /*#__PURE__*/function (_Component) {
         sizes: "16x16",
         href: "../assets/images/favicon.png"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, "Admin Pro Admin Template - The Ultimate Bootstrap 4 Admin Template"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
-        href: "{{ asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}",
+        href: "../assets/plugins/bootstrap/css/bootstrap.min.css",
         rel: "stylesheet"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
-        href: "{{ asset('assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}",
+        href: "../assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css",
         rel: "stylesheet"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
-        href: "{{ asset('assets/plugins/chartist-js/dist/chartist.min.css') }}",
+        href: "../assets/plugins/chartist-js/dist/chartist.min.css",
         rel: "stylesheet"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
-        href: "{{ asset('assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css') }}",
+        href: "../assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css",
         rel: "stylesheet"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
-        href: "{{ asset('assets/plugins/switchery/dist/switchery.min.css') }}",
+        href: "../assets/plugins/switchery/dist/switchery.min.css",
         rel: "stylesheet"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
-        href: "{{ asset('assets/plugins/c3-master/c3.min.css') }}",
+        href: "../assets/plugins/c3-master/c3.min.css",
         rel: "stylesheet"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
-        href: "{{ asset('css/style.css') }}",
+        href: "../css/style.css",
         rel: "stylesheet"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
-        href: "{{ asset('css/pages/dashboard2.css') }}",
+        href: "../css/pages/dashboard2.css",
         rel: "stylesheet"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
-        href: "{{ asset('css/colors/default-dark.css') }}",
+        href: "../css/colors/default-dark.css",
         id: "theme",
         rel: "stylesheet"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
-        href: "{{ asset('assets/plugins/sweetalert/sweetalert.css') }}",
+        href: "../assets/plugins/sweetalert/sweetalert.css",
         rel: "stylesheet",
         type: "text/css"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
-        href: "{{ asset('assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') }}",
+        href: "../assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css",
         rel: "stylesheet"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
-        rel: "stylesheet",
-        href: "{{ asset('assets/plugins/dropify/dist/css/dropify.min.css') }}"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
-        href: "{{ asset('assets/plugins/Magnific-Popup-master/dist/magnific-popup.css') }}",
+        href: "../assets/plugins/dropify/dist/css/dropify.min.css",
         rel: "stylesheet"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
-        href: "{{ asset('css/pages/user-card.css') }}",
+        href: "../assets/plugins/Magnific-Popup-master/dist/magnific-popup.css",
+        rel: "stylesheet"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
+        href: "../css/pages/user-card.css",
         rel: "stylesheet"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("body", {
         "class": "fix-header fix-sidebar card-no-border"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "preloader"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "loader"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "loader__figure"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        "class": "loader__label"
-      }, "Admin Pro"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "main-wrapper"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_TopNavbar__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Sidebar__WEBPACK_IMPORTED_MODULE_4__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "js/app.js"
+        src: "../assets/plugins/jquery/jquery.min.js"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('assets/plugins/jquery/jquery.min.js') }}"
+        src: "../assets/plugins/bootstrap/js/popper.min.js"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('assets/plugins/bootstrap/js/popper.min.js') }}"
+        src: "../assets/plugins/bootstrap/js/bootstrap.min.js"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('assets/plugins/bootstrap/js/bootstrap.min.js') }}"
+        src: "../js/perfect-scrollbar.jquery.min.js"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('js/perfect-scrollbar.jquery.min.js') }}"
+        src: "../js/waves.js"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('js/waves.js') }}"
+        src: "../js/sidebarmenu.js"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('js/sidebarmenu.js') }}"
+        src: "../js/custom.min.js"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('js/custom.min.js') }}"
+        src: "../assets/plugins/sweetalert/sweetalert.min.js"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('assets/plugins/sweetalert/sweetalert.min.js') }}"
+        src: "../'assets/plugins/sweetalert/jquery.sweet-alert.custom.js"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('assets/plugins/sweetalert/jquery.sweet-alert.custom.js') }}"
+        src: "../assets/plugins/chartist-js/dist/chartist.min.js"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('assets/plugins/chartist-js/dist/chartist.min.js') }}"
+        src: "../assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js') }}"
+        src: "../assets/plugins/d3/d3.min.js"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('assets/plugins/d3/d3.min.js') }}"
+        src: "../assets/plugins/c3-master/c3.min.js"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('assets/plugins/c3-master/c3.min.js') }}"
+        src: "../assets/plugins/sticky-kit-master/dist/sticky-kit.min.js"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('assets/plugins/sticky-kit-master/dist/sticky-kit.min.js') }}"
+        src: "../assets/plugins/sparkline/jquery.sparkline.min.js"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('assets/plugins/sparkline/jquery.sparkline.min.js') }}"
+        src: "../js/dashboard3.js"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('js/dashboard3.js') }}"
+        src: "../assets/plugins/datatables/jquery.dataTables.min.js"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"
+        src: "../assets/plugins/switchery/dist/switchery.min.js"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('assets/plugins/switchery/dist/switchery.min.js') }}"
+        src: "../assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js') }}"
+        src: "../assets/plugins/styleswitcher/jQuery.style.switcher.js"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('assets/plugins/styleswitcher/jQuery.style.switcher.js') }}"
+        src: "../assets/plugins/dropify/dist/js/dropify.min.js"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('assets/plugins/dropify/dist/js/dropify.min.js') }}"
+        src: "../assets/plugins/Magnific-Popup-master/dist/jquery.magnific-popup.min.js"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('assets/plugins/Magnific-Popup-master/dist/jquery.magnific-popup.min.js') }}"
+        src: "../assets/plugins/Magnific-Popup-master/dist/jquery.magnific-popup-init.js"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('assets/plugins/Magnific-Popup-master/dist/jquery.magnific-popup-init.js') }}"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('assets/plugins/tinymce/tinymce.min.js') }}"
+        src: "../assets/plugins/tinymce/tinymce.min.js"
       })));
     }
   }]);
@@ -33208,7 +33198,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-var user = false;
+var user = true;
 
 var Main = /*#__PURE__*/function (_Component) {
   _inherits(Main, _Component);
@@ -33592,32 +33582,26 @@ var Login = /*#__PURE__*/function (_Component) {
         rel: "icon",
         type: "image/png",
         sizes: "16x16",
-        href: "{{ asset('admin/assets/images/favicon.png') }}"
+        href: "{{ asset('assets/images/favicon.png') }}"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", null, "Teksopt | login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
-        href: "{{ asset('admin/assets/plugins/bootstrap/css/bootstrap.min.css') }}",
+        href: "../assets/plugins/bootstrap/css/bootstrap.min.css",
         rel: "stylesheet"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
-        href: "{{ asset('admin/css/pages/login-register-lock.css') }}",
+        href: "../css/pages/login-register-lock.css",
         rel: "stylesheet"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
-        href: "css/style.css",
+        href: "../css/style.css",
         rel: "stylesheet"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
-        href: "{{ asset('admin/css/colors/default-dark.css') }}",
+        href: "../css/colors/default-dark.css",
         id: "theme",
         rel: "stylesheet"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("body", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "preloader"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "loader"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "loader__figure"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        "class": "loader__label"
-      }, "Teksopt"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("body", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("section", {
         id: "wrapper",
         "class": "login-register login-sidebar",
-        style: "background-image:url({{ asset('admin/assets/images/logo.jpg') }}"
+        style: {
+          backgroundImage: "url(" + "../assets/images/logo.jpg" + ")"
+        }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "login-box card"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -33630,10 +33614,10 @@ var Login = /*#__PURE__*/function (_Component) {
         href: "javascript:void(0)",
         "class": "text-center db"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "{{ asset('admin/assets/images/logo-icon.png') }}",
+        src: "../assets/images/logo-icon.png",
         alt: "Home"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "{{ asset('admin/assets/images/logo-text.png') }}",
+        src: "../assets/images/logo-text.png",
         alt: "Home"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         "class": "form-group m-t-20"
@@ -33641,7 +33625,6 @@ var Login = /*#__PURE__*/function (_Component) {
         "class": "col-xs-12"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         "class": "form-control",
-        value: "{{ old('email') }}",
         type: "email",
         name: "email",
         required: "email",
@@ -33678,11 +33661,11 @@ var Login = /*#__PURE__*/function (_Component) {
         "class": "btn btn-info btn-lg btn-block text-uppercase btn-rounded",
         type: "submit"
       }, "Log In"))))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('admin/assets/plugins/jquery/jquery.min.js') }}"
+        src: "../assets/plugins/jquery/jquery.min.js"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('admin/assets/plugins/bootstrap/js/popper.min.js') }}"
+        src: "../assets/plugins/bootstrap/js/popper.min.js"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("script", {
-        src: "{{ asset('admin/assets/plugins/bootstrap/js/bootstrap.min.js') }}"
+        src: "../assets/plugins/bootstrap/js/bootstrap.min.js"
       })));
     }
   }]);
