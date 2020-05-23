@@ -2,6 +2,7 @@ import React,{Component} from "react";
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router,Link,Route,Switch} from 'react-router-dom'; 
 import Dashboard from "./Dashboard";
+import Main from "./Main";
 import Example from "./Example";
 
 export default function Sidebar() {
@@ -38,7 +39,8 @@ export default function Sidebar() {
                 </aside>
 
                 <Switch>
-                  <Route exact path='/' component={Dashboard}/>
+                  <Route exact path='/' component={Main}/>
+                  <Route exact path='/dashboard' component={Dashboard}/>
                   <Route exact path='/example' component={Example}/>
                 </Switch>
            </Router>

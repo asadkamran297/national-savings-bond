@@ -1,11 +1,73 @@
 import React,{Component,Fragment} from "react";
 import ReactDOM from 'react-dom';
+import { Redirect } from 'react-router-dom';
+import {BrowserRouter as Router,Link,Route,Switch} from 'react-router-dom'; 
+import { browserHistory } from 'react-router';
+import axios from 'axios';
+
+
 
 export default class Login extends Component{
 
+constructor(props){
+        super(props);
+
+        this.state={
+            email:'',
+            password:'',
+            redirect:false
+        }
+    }
+
+onChange(e) {
+       this.setState({
+       [e.target.name]: e.target.value
+    },function(){
+
+       console.log(this.state.email);
+       console.log(this.state.password);
+
+    });
     
+}
+
+
+onLogin(e){
+      
+        console.log('Done');
+        
+         const login = {
+          email:this.state.email,
+          password:this.state.password,
+      }
+
+      axios.post('http://127.0.0.1:8000/api/login',login)
+      .then(res=>{
+        console.log(res.data.success);
+            this.setState({
+               redirect : res.data.success
+          })
+      });
+
+
+      
+    }
+
 
        render(){
+
+        if(this.state.redirect == true){
+         console.log('in');
+          return (
+           <Router>
+                 <Redirect
+                 to={{
+                   pathname: "/",
+                   state: { redirect: this.state.redirect}
+                }}/>
+           </Router>
+             );
+        }
 
         return(
             
@@ -37,12 +99,12 @@ export default class Login extends Component{
                                 <a href="javascript:void(0)" class="text-center db"><img src="../assets/images/logo-icon.png" alt="Home" /><br/><img src="../assets/images/logo-text.png" alt="Home" /></a>
                                 <div class="form-group m-t-20">
                                     <div class="col-xs-12">
-                                        <input class="form-control" type="email" name="email" required="email" placeholder="Email"/>
+                                        <input class="form-control" onChange={this.onChange.bind(this)} type="email" id="email" name="email" required="email" placeholder="Email"/>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-xs-12">
-                                        <input class="form-control" name="password" type="password" required="" placeholder="Password"/>
+                                        <input class="form-control" onChange={this.onChange.bind(this)} id="password" name="password" type="password" required="" placeholder="Password"/>
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -55,7 +117,7 @@ export default class Login extends Component{
                                 </div>
                                 <div class="form-group text-center m-t-20">
                                     <div class="col-xs-12">
-                                        <button class="btn btn-info btn-lg btn-block text-uppercase btn-rounded" type="submit">Log In</button>
+                                        <button onClick={this.onLogin.bind(this)} class="btn btn-info btn-lg btn-block text-uppercase btn-rounded" type="button" >Log In</button>
                                     </div>
                                 </div>
 

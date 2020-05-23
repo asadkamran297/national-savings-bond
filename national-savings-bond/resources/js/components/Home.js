@@ -62,7 +62,7 @@ export default class Home extends Component{
 					    <script src="../js/custom.min.js"></script>
 
 					    <script src="../assets/plugins/sweetalert/sweetalert.min.js"></script>
-					    <script src="../'assets/plugins/sweetalert/jquery.sweet-alert.custom.js"></script>
+					    <script src="../assets/plugins/sweetalert/jquery.sweet-alert.custom.js"></script>
 
 					    <script src="../assets/plugins/chartist-js/dist/chartist.min.js"></script>
 					    <script src="../assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
