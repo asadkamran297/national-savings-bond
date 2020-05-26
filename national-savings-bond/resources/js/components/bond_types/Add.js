@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 
-export default class Example extends Component {
+export default class Add extends Component {
 
     constructor(props){
         super(props);

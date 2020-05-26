@@ -4,6 +4,7 @@ import {BrowserRouter as Router,Link,Route,Switch} from 'react-router-dom';
 import Dashboard from "./Dashboard";
 import Main from "./Main";
 import Example from "./Example";
+import List from  "./bond_types/List";
 
 export default function Sidebar() {
     return (
@@ -31,6 +32,9 @@ export default function Sidebar() {
                                    <Link class="has-arrow waves-effect waves-dark" to="/" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Home</span></Link>
                                 </li>
                                 <li> 
+                                   <Link class="has-arrow waves-effect waves-dark" to="/bond/types/list" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">List</span></Link>
+                                </li>
+                                <li> 
                                    <Link class="has-arrow waves-effect waves-dark" to="/example" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Form</span></Link>
                                 </li>
                             </ul>
@@ -42,6 +46,7 @@ export default function Sidebar() {
                   <Route exact path='/' component={Main}/>
                   <Route exact path='/dashboard' component={Dashboard}/>
                   <Route exact path='/example' component={Example}/>
+                  <Route exact path='/bond/types/list' component={List}/>
                 </Switch>
            </Router>
     );

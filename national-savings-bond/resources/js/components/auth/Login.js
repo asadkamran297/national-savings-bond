@@ -5,8 +5,6 @@ import {BrowserRouter as Router,Link,Route,Switch} from 'react-router-dom';
 import { browserHistory } from 'react-router';
 import axios from 'axios';
 
-
-
 export default class Login extends Component{
 
 constructor(props){
