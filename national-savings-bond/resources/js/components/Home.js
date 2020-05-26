@@ -4,8 +4,36 @@ import {BrowserRouter as Router,Link,Route,Switch} from 'react-router-dom';
 import TopNavbar from "./TopNavbar";
 import Sidebar from "./Sidebar";
 import Login from "./auth/Login";
+import doSomething from "./helper/functions";
 
 export default class Home extends Component{
+
+
+	constructor(props){
+        super(props);
+        
+    }
+
+    componentDidMount(){
+    	console.log('here');
+        //console.log(this.props.location.state.detail);
+        console.log(localStorage.getItem("lastname"));
+        console.log(localStorage.hasOwnProperty("lastnam"))
+        console.log(this.props.location);
+
+
+        if(this.props.location.state != undefined)
+        {
+        	  const { history } = this.props;
+
+		      history.push({
+		        pathname:'/',
+		     });
+        }
+
+        console.log('beer');
+        doSomething();
+    }
 
 	
 
@@ -46,7 +74,9 @@ export default class Home extends Component{
 
 					    <div id="main-wrapper">
 					        
-					        <TopNavbar/>
+					        {/*===========Injecting history into nested or child components==========*/}
+
+					        <TopNavbar history={this.props.history} />
                             <Sidebar/>
 					        
 					    </div>

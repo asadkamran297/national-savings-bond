@@ -15,17 +15,43 @@ constructor(props){
         this.state={
             email:'',
             password:'',
-            redirect:false
+            redirect:false,
+            message:''
         }
+
+       /*console.log('The State is: '+this.props.location.state);
+
+        if(this.props.location.state != undefined)
+        {
+              const { history } = this.props;
+
+              history.push({
+                pathname:'/dashboard',
+             });
+        }*/
+
+        //console.log(localStorage.getItem("login"));
+
+        const { history } = this.props;
+        console.log('here i am : '+history)
+        
+        if (localStorage.getItem("login") != null) {
+           
+           const { history } = this.props;
+
+              history.push({
+                pathname:'/dashboard',
+             });
+
+        }
+
     }
 
 onChange(e) {
+
        this.setState({
        [e.target.name]: e.target.value
     },function(){
-
-       console.log(this.state.email);
-       console.log(this.state.password);
 
     });
     
@@ -33,8 +59,6 @@ onChange(e) {
 
 
 onLogin(e){
-      
-        console.log('Done');
         
          const login = {
           email:this.state.email,
@@ -44,30 +68,40 @@ onLogin(e){
       axios.post('http://127.0.0.1:8000/api/login',login)
       .then(res=>{
         console.log(res.data.success);
-            this.setState({
-               redirect : res.data.success
-          })
+
+          if(res.data.success)
+          {
+               const { history } = this.props;
+
+              localStorage.setItem("login", "Smith");
+
+              history.push({
+                pathname:'/dashboard',
+                //state: { detail: 'johnny' }
+             });
+          }
+          else
+          {
+              this.setState({
+                   message: 'The Credidentials Did not Match'
+                },function(){
+                    console.log(this.state.message);
+              });
+          }
+
       });
 
 
       
     }
 
+    componentDidMount(){
+
+        
+    }
+
 
        render(){
-
-        if(this.state.redirect == true){
-         console.log('in');
-          return (
-           <Router>
-                 <Redirect
-                 to={{
-                   pathname: "/",
-                   state: { redirect: this.state.redirect}
-                }}/>
-           </Router>
-             );
-        }
 
         return(
             
@@ -120,6 +154,8 @@ onLogin(e){
                                         <button onClick={this.onLogin.bind(this)} class="btn btn-info btn-lg btn-block text-uppercase btn-rounded" type="button" >Log In</button>
                                     </div>
                                 </div>
+                                
+                                <div style={{textAlign: 'center'}}>{this.state.message}</div>
 
                             </form>
 

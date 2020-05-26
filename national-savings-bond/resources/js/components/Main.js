@@ -16,8 +16,8 @@ export default class Main extends Component{
         this.state={
             user: false
         }
-        console.log('here');
-        try
+        
+        /*try
         {
                console.log(this.props.params.state.results);	
 	           this.setState({
@@ -27,27 +27,21 @@ export default class Main extends Component{
         catch(Exception){
 
         }
-        console.log('hello');
+        console.log('hello');*/
+        
+        const { history } = this.props;
+        console.log('here i am : '+history)
     }
 
 	   render(){
-        
-        if(this.state.user)
-        {
-		   	return(
-	            
-	             <Home />
-
-		     );
-        }
-        else
-        {
-        	return(
-	            
-	             <Login/>
-
-		     );
-        }
+	   	 return(
+		   	 	<Router>
+		           <Switch>
+		                  <Route exact path='/' component={Login}/>
+		                  <Route exact path='/dashboard' component={Home}/>
+		           </Switch>
+		        </Router>
+           );
 
 	  }
 
