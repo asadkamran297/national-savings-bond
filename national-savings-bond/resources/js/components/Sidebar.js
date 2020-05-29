@@ -4,7 +4,9 @@ import {BrowserRouter as Router,Link,Route,Switch} from 'react-router-dom';
 import Dashboard from "./Dashboard";
 import Main from "./Main";
 import Example from "./Example";
-import List from  "./bond_types/List";
+import BondTypeList from  "./bond_types/List";
+import BondTypeAdd from  "./bond_types/Add";
+import BondTypeEdit from  "./bond_types/Edit";
 
 export default function Sidebar() {
     return (
@@ -35,7 +37,7 @@ export default function Sidebar() {
                                    <Link class="has-arrow waves-effect waves-dark" to="/bond/types/list" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">List</span></Link>
                                 </li>
                                 <li> 
-                                   <Link class="has-arrow waves-effect waves-dark" to="/example" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Form</span></Link>
+                                   <Link class="has-arrow waves-effect waves-dark" to="/bond/add" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Form</span></Link>
                                 </li>
                             </ul>
                         </nav>
@@ -45,8 +47,9 @@ export default function Sidebar() {
                 <Switch>
                   <Route exact path='/' component={Main}/>
                   <Route exact path='/dashboard' component={Dashboard}/>
-                  <Route exact path='/example' component={Example}/>
-                  <Route exact path='/bond/types/list' component={List}/>
+                  <Route exact path='/bond/add' component={BondTypeAdd}/>
+                  <Route exact path='/bond/types/list' component={BondTypeList}/>
+                  <Route exact path='/bond/edit/:id' component={BondTypeEdit}/>
                 </Switch>
            </Router>
     );

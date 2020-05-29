@@ -16,6 +16,12 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::post('/bondtype/store','BondTypeController@store')->name('bondtype.store');
+Route::post('/bondtype/delete','BondTypeController@delete')->name('bondtype.delete');
+Route::get('/bondtype/list','BondTypeController@list')->name('bondtype.list');
+Route::get('/bondtype/edit/{id}','BondTypeController@edit')->name('bondtype.edit');
+Route::post('/bondtype/update','BondTypeController@update')->name('bondtype.update');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
