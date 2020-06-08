@@ -5,6 +5,8 @@ import TopNavbar from "./TopNavbar";
 import Sidebar from "./Sidebar";
 import Login from "./auth/Login";
 import doSomething from "./helper/functions";
+import GLOBAL from './global.js';
+
 
 export default class Home extends Component{
 
@@ -15,7 +17,9 @@ export default class Home extends Component{
     }
 
     componentDidMount(){
-    	console.log('here');
+
+    	
+
         //console.log(this.props.location.state.detail);
         console.log(localStorage.getItem("lastname"));
         console.log(localStorage.hasOwnProperty("lastnam"))
@@ -33,12 +37,13 @@ export default class Home extends Component{
 
         console.log('beer');
         doSomething();
+        console.log(GLOBAL.token);
     }
 
 	
 
 	   render(){
-
+            
 	   	return(
             
                  <html>
@@ -51,7 +56,7 @@ export default class Home extends Component{
 					    <meta name="description" content=""/>
 					    <meta name="author" content=""/>
 					    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png"/>
-					    <title>Admin Pro Admin Template - The Ultimate Bootstrap 4 Admin Template</title>
+					    <title>{ GLOBAL.screen1 }</title>
 					    <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
 					    <link href="../assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet"/>
 					    <link href="../assets/plugins/chartist-js/dist/chartist.min.css" rel="stylesheet"/>
@@ -111,6 +116,7 @@ export default class Home extends Component{
 					    <script src="../assets/plugins/Magnific-Popup-master/dist/jquery.magnific-popup.min.js"></script>
 					    <script src="../assets/plugins/Magnific-Popup-master/dist/jquery.magnific-popup-init.js"></script>
 					    <script src="../assets/plugins/tinymce/tinymce.min.js"></script>
+					    
 
 					</body>
 

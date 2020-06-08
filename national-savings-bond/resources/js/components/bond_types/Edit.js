@@ -2,7 +2,6 @@ import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import GLOBAL from './../global.js';
-import {BrowserRouter as Router,Link,Route,Switch} from 'react-router-dom';
 
 const div_style="form-group";
 const div_style_error="form-group has-danger";
@@ -15,10 +14,7 @@ export default class Add extends Component {
         super(props);
         
         this.state={
-/*            inputs:[
-                 { type: 'email', placeholder: 'Email Address' },
-                 { type: 'name', placeholder: 'Email Address' }
-            ],*/
+            id:0,
             amount:0,
             amount_error:0,
             amount_error_message:'',
@@ -37,9 +33,6 @@ export default class Add extends Component {
             message:''
         }
 
-        /*this.state.inputs.map( function(item, i) {
-        console.log(item.type);
-      }.bind(this))*/
     }
 
     onChange(e) {
@@ -53,13 +46,30 @@ export default class Add extends Component {
     
    }
 
-   onSave(e){
+   getData(e){
+       axios.get(GLOBAL.url+'bondtype/edit/'+this.props.match.params.id,{ headers: { Authorization: `Bearer ${GLOBAL.token}` } })
+        .then(response=>{
+            console.log('jins');
+            console.log(response.data);
+            this.setState({
+              id:response.data.data.id,
+              amount:response.data.data.amount,
+              status:response.data.data.status,
+              first_prize:response.data.data.first_prize,
+              second_prize:response.data.data.second_prize,
+              third_prize:response.data.data.third_prize
+            });
+        });
+   }
+
+   onUpdate(e){
       
        //console.log(this.Validate());
 
        if(this.Validate())
        {
                   const data = {
+                  id:this.state.id,
                   amount:this.state.amount,
                   status:this.state.status,
                   first_prize:this.state.first_prize,
@@ -67,7 +77,7 @@ export default class Add extends Component {
                   third_prize:this.state.third_prize
               }
               
-              axios.post(GLOBAL.url+'bondtype/store',data,{ headers: { Authorization: `Bearer ${GLOBAL.token}` } })
+              axios.post(GLOBAL.url+'bondtype/update',data,{ headers: { Authorization: `Bearer ${GLOBAL.token}` } })
               .then(res=>{
                     
                     if(res.data.status)
@@ -94,8 +104,6 @@ export default class Add extends Component {
        }       
 
     }
-
-    
 
    Validate(){
 
@@ -180,6 +188,7 @@ export default class Add extends Component {
    }
 
    componentDidMount(){
+       this.getData();
    }
 
 
@@ -196,9 +205,6 @@ export default class Add extends Component {
                                         <h4 class="m-b-0 text-white">Add Bond Types</h4>
                                     </div>
                                     <div class="card-body">
-                                        <div style={{ textAlign: 'right' }}>
-                                                <Link to="/bond/types/list"><button type="button" class="btn waves-effect waves-light btn-primary">Back</button></Link>
-                                        </div>
                                         <form action="#">
                                             <div class="form-body">
                                                 <div class="row p-t-20">
@@ -206,7 +212,7 @@ export default class Add extends Component {
                                                     <div class="col-md-6">
                                                         <div class={ this.state.amount_error ? div_style_error : div_style }>
                                                             <label class="control-label">Amount</label>
-                                                            <input type="number" id="amount" name="amount" class={ this.state.amount_error ? form_style_error : form_style }  onChange={this.onChange.bind(this)} placeholder="0"/>
+                                                            <input type="number" id="amount" name="amount" class={ this.state.amount_error ? form_style_error : form_style }  onChange={this.onChange.bind(this)} value={this.state.amount} />
                                                             <small class="form-control-feedback">{this.state.amount_error_message}</small> </div>
                                                     </div>
                                                     
@@ -214,8 +220,8 @@ export default class Add extends Component {
                                                         <div class="form-group has-success">
                                                             <label class="control-label">Status</label>
                                                             <select class="form-control custom-select" id="status" name="status" onChange={this.onChange.bind(this)}>
-                                                                <option value="1">Active</option>
-                                                                <option value="0">Inactive</option>
+                                                                <option value="1" selected = { this.state.status==1 ? 'true' : '' }>Active</option>
+                                                                <option value="0" selected = { this.state.status==0 ? 'true' : '' }>Inactive</option>
                                                             </select>
                                                             <small class="form-control-feedback"></small> </div>
                                                     </div>
@@ -226,14 +232,14 @@ export default class Add extends Component {
                                                     <div class="col-md-6">
                                                         <div class={ this.state.first_prize_error ? div_style_error : div_style }>
                                                             <label class="control-label">First Prize</label>
-                                                            <input type="number" id="first_prize" name="first_prize" class={ this.state.first_prize_error ? form_style_error : form_style } onChange={this.onChange.bind(this)} placeholder="0"/>
+                                                            <input type="number" id="first_prize" name="first_prize" class={ this.state.first_prize_error ? form_style_error : form_style } onChange={this.onChange.bind(this)} value={this.state.first_prize}/>
                                                             <small class="form-control-feedback">{this.state.first_prize_error_message}</small> </div>
                                                     </div>
 
                                                     <div class="col-md-6">
                                                         <div class={ this.state.second_prize_error ? div_style_error : div_style }>
                                                             <label class="control-label">Second Prize</label>
-                                                            <input type="number" id="second_prize" name="second_prize" class={ this.state.second_prize_error ? form_style_error : form_style } onChange={this.onChange.bind(this)} placeholder="0"/>
+                                                            <input type="number" id="second_prize" name="second_prize" class={ this.state.second_prize_error ? form_style_error : form_style } onChange={this.onChange.bind(this)} value={this.state.second_prize}/>
                                                             <small class="form-control-feedback">{this.state.second_prize_error_message}</small> </div>
                                                     </div>
 
@@ -244,7 +250,7 @@ export default class Add extends Component {
                                                     <div class="col-md-6">
                                                         <div class={ this.state.third_prize_error ? div_style_error : div_style }>
                                                             <label class="control-label">Third Prize</label>
-                                                            <input type="number" id="third_prize" name="third_prize" class={ this.state.third_prize_error ? form_style_error : form_style } onChange={this.onChange.bind(this)} placeholder="0"/>
+                                                            <input type="number" id="third_prize" name="third_prize" class={ this.state.third_prize_error ? form_style_error : form_style } onChange={this.onChange.bind(this)}  value={this.state.third_prize}/>
                                                             <small class="form-control-feedback"> {this.state.third_prize_error_message} </small> </div>
                                                     </div>
 
@@ -252,7 +258,7 @@ export default class Add extends Component {
 
                                             </div>
                                             <div class="form-actions">
-                                                <button type="button" onClick={this.onSave.bind(this)} class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
+                                                <button type="button" onClick={this.onUpdate.bind(this)} class="btn btn-success"> <i class="fa fa-check"></i> Edit</button>
                                             </div>
                                         </form>
                                     </div>

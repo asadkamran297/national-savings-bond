@@ -22,22 +22,11 @@ export default function Sidebar() {
                                     </ul>
                                 </li>
                                 <li class="nav-devider"></li>
-                                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard <span class="label label-rouded label-themecolor pull-right">4</span></span></a>
-                                    <ul aria-expanded="false" class="collapse">
-                                        <li><a href="index.html">Minimal </a></li>
-                                        <li><a href="index2.html">Analytical</a></li>
-                                        <li><a href="index3.html">Demographical</a></li>
-                                        <li><a href="index4.html">Modern</a></li>
-                                    </ul>
-                                </li>
                                 <li> 
                                    <Link class="has-arrow waves-effect waves-dark" to="/" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Home</span></Link>
                                 </li>
                                 <li> 
-                                   <Link class="has-arrow waves-effect waves-dark" to="/bond/types/list" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">List</span></Link>
-                                </li>
-                                <li> 
-                                   <Link class="has-arrow waves-effect waves-dark" to="/bond/add" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Form</span></Link>
+                                   <Link class="has-arrow waves-effect waves-dark" to="/bond/types/list" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Bond Types</span></Link>
                                 </li>
                             </ul>
                         </nav>
@@ -47,7 +36,7 @@ export default function Sidebar() {
                 <Switch>
                   <Route exact path='/' component={Main}/>
                   <Route exact path='/dashboard' component={Dashboard}/>
-                  <Route exact path='/bond/add' component={BondTypeAdd}/>
+                  <Route exact path='/bond/add' component={BondTypeAdd} />
                   <Route exact path='/bond/types/list' component={BondTypeList}/>
                   <Route exact path='/bond/edit/:id' component={BondTypeEdit}/>
                 </Switch>

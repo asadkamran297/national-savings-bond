@@ -55,6 +55,7 @@ class LoginController extends Controller
             //$success['token'] =  $user->createToken('MyApp')->accessToken; 
             return response()->json([
                 'success' => true,
+                'token' => $user->createToken('MyApp')->accessToken
             ], 200); 
         } 
         else

@@ -4,6 +4,7 @@ import FlashMassage from 'react-flash-message'
 import axios from 'axios';
 import swal from 'sweetalert';
 import {BrowserRouter as Router,Link,Route,Switch} from 'react-router-dom';
+import GLOBAL from './../global.js';
 
 
 export default class List extends Component {
@@ -13,15 +14,16 @@ export default class List extends Component {
         
         this.state={
             data:[],
-            message:''
+            message:'',
+            button:'Add'
         }
 
-        
+        console.log(GLOBAL.token);
 
     }
 
     async fetch_data(){
-       axios.get('http://127.0.0.1:8000/api/bondtype/list')
+       axios.get(GLOBAL.url+'bondtype/list',{ headers: { Authorization: `Bearer ${GLOBAL.token}` } })
         .then(response=>{
             this.setState({
               data:response.data.data
@@ -61,6 +63,31 @@ export default class List extends Component {
             });
         }
 
+        // Enable pusher logging - don't include this in production
+        Pusher.logToConsole = true;
+
+        var pusher = new Pusher('c4a08f4726d206f07602', {
+            cluster: 'ap1',
+            forceTLS: true
+        });
+
+        const this2=this;
+
+        var channel = pusher.subscribe('my-channel');
+        channel.bind('my-event', function(data) {
+
+                this2.setState({
+                  button:'Pusher'
+                },function(){
+                    console.log(this.state.button)
+                });
+
+            });
+
+    }
+
+    goBack(){
+        this.props.history.goBack();  
     }
 
     onDelete(id){
@@ -80,7 +107,7 @@ export default class List extends Component {
                         id:id
                      }
                     
-                      axios.post('http://127.0.0.1:8000/api/bondtype/delete',data)
+                      axios.post(GLOBAL.url+'bondtype/delete',data,{ headers: { Authorization: `Bearer ${GLOBAL.token}` } })
                       .then(res=>{
                             console.log(res.data);
                             if(res.data.status)
@@ -111,9 +138,13 @@ export default class List extends Component {
                                 <div class="col-12">
                                     <div class="card">
                                         <div class="card-body">
+
                                             <h4 class="card-title">Bond Types</h4>
                                             <h6 class="card-subtitle">This is the listing for Bond types</h6>
-                                            
+                                            <div style={{ textAlign: 'right' }}>
+                                                <Link to="/bond/add"><button type="button" class="btn waves-effect waves-light btn-primary">{this.state.button}</button></Link>
+                                            </div>
+
                                             {
                                                 this.state.message !='' ? (
                                                     <FlashMassage duration={2000}>

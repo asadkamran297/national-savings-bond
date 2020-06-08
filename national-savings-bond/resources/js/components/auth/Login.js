@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import {BrowserRouter as Router,Link,Route,Switch} from 'react-router-dom'; 
 import { browserHistory } from 'react-router';
 import axios from 'axios';
+import GLOBAL from './../global.js';
 
 export default class Login extends Component{
 
@@ -63,7 +64,7 @@ onLogin(e){
           password:this.state.password,
       }
 
-      axios.post('http://127.0.0.1:8000/api/login',login)
+      axios.post(GLOBAL.url+'login',login)
       .then(res=>{
         console.log(res.data.success);
 
@@ -72,6 +73,7 @@ onLogin(e){
                const { history } = this.props;
 
               localStorage.setItem("login", "Smith");
+              GLOBAL.token = res.data.token;
 
               history.push({
                 pathname:'/dashboard',
@@ -100,7 +102,7 @@ onLogin(e){
 
 
        render(){
-
+        //console.log(GLOBAL.token);
         return(
             
             <html lang="en">

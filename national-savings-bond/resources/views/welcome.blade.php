@@ -61,7 +61,7 @@
     <script src="{{ asset('assets/plugins/Magnific-Popup-master/dist/jquery.magnific-popup.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/Magnific-Popup-master/dist/jquery.magnific-popup-init.js') }}"></script>
     <script src="{{ asset('assets/plugins/tinymce/tinymce.min.js') }}"></script>
-    
+    <script src="https://js.pusher.com/5.1/pusher.min.js"></script>
 
 </body>
 
