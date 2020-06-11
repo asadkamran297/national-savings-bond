@@ -89,6 +89,7 @@ export default class Home extends Component{
 
 					    
 					    <script src="../assets/plugins/jquery/jquery.min.js"></script>
+					    <script src="https://js.pusher.com/5.1/pusher.min.js"></script>
 					    <script src="../assets/plugins/bootstrap/js/popper.min.js"></script>
 					    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 					    <script src="../js/perfect-scrollbar.jquery.min.js"></script>
@@ -116,6 +117,7 @@ export default class Home extends Component{
 					    <script src="../assets/plugins/Magnific-Popup-master/dist/jquery.magnific-popup.min.js"></script>
 					    <script src="../assets/plugins/Magnific-Popup-master/dist/jquery.magnific-popup-init.js"></script>
 					    <script src="../assets/plugins/tinymce/tinymce.min.js"></script>
+
 					    
 
 					</body>

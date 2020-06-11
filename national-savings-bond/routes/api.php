@@ -31,4 +31,6 @@ Route::middleware('auth:api')->group(function () {
 	Route::get('/bondtype/edit/{id}','BondTypeController@edit')->name('bondtype.edit');
 	Route::post('/bondtype/update','BondTypeController@update')->name('bondtype.update');
 
+	Route::get('/dashboard/stats','DashboardController@stats')->name('dashboard.stats');
+
 });

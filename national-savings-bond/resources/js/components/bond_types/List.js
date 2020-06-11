@@ -65,6 +65,12 @@ export default class List extends Component {
             });
         }
 
+        this.pusher_run();        
+
+    }
+
+    pusher_run(){
+        
         // Enable pusher logging - don't include this in production
         Pusher.logToConsole = true;
 
@@ -85,7 +91,6 @@ export default class List extends Component {
                 });
 
             });
-
     }
 
     goBack(){
