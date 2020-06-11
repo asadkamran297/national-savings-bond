@@ -17,7 +17,8 @@ class UserTableSeeder extends Seeder
             'name' => 'Admin',
             'role_id' => 1,
             'email' => 'admin@nss.com',
-            'password' => bcrypt('123456')
+            'password' => bcrypt('123456'),
+            'image' => '1.jpg'
         ]);
     }
 }

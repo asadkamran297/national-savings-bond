@@ -14,6 +14,7 @@ export default class List extends Component {
         
         this.state={
             data:[],
+            pages:[],
             message:'',
             button:'Add'
         }
@@ -22,11 +23,12 @@ export default class List extends Component {
 
     }
 
-    async fetch_data(){
-       axios.get(GLOBAL.url+'bondtype/list',{ headers: { Authorization: `Bearer ${GLOBAL.token}` } })
+    async fetch_data(page=1){
+       axios.get(GLOBAL.url+'bondtype/list/'+page,{ headers: { Authorization: `Bearer ${GLOBAL.token}` } })
         .then(response=>{
             this.setState({
-              data:response.data.data
+              data:response.data.data,
+              pages:response.data.total_pages
             },function(){
                 console.log(this.state.data)
             });
@@ -192,6 +194,23 @@ export default class List extends Component {
                                                     </tbody>
                                                 </table>
                                             </div>
+                                            
+                                            <div style={{ textAlign: "center" }} >
+                                                <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups" >
+                                                  <div class="btn-group mr-2" role="group" aria-label="First group">
+                                                     {
+                                                        this.state.pages.map((value,i)=>{
+
+                                                           return(
+                                                              <button type="button" class="btn btn-secondary" onClick={ this.fetch_data.bind(this,++i) }>{ i++ }</button>
+                                                           )
+                                                        })
+                                                     }
+                                                      
+                                                  </div>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>

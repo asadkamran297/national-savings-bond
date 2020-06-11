@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import GLOBAL from './../global.js';
+import {BrowserRouter as Router,Link,Route,Switch} from 'react-router-dom';
 
 const div_style="form-group";
 const div_style_error="form-group has-danger";
@@ -205,6 +206,9 @@ export default class Add extends Component {
                                         <h4 class="m-b-0 text-white">Add Bond Types</h4>
                                     </div>
                                     <div class="card-body">
+                                        <div style={{ textAlign: 'right' }}>
+                                                <Link to="/bond/types/list"><button type="button" class="btn waves-effect waves-light btn-primary">Back</button></Link>
+                                        </div>
                                         <form action="#">
                                             <div class="form-body">
                                                 <div class="row p-t-20">

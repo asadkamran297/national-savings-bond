@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Events\BondTypeInserted;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,11 +12,29 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::post('/sender',function(){
 
-Route::get('/', function () {
-    return view('welcome');
+    event(new BondTypeInserted('success'));
 });
+
+Route::get('/sender',function(){
+
+    return view('sender');
+});
+
+Route::get('/listener',function(){
+
+    return view('listener');
+});
+
+Route::get('/{path?}', [
+    'uses' => 'ReactController@show',
+    'as' => 'react',
+    'where' => ['path' => '.*']
+]);
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+

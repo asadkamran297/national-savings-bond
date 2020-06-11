@@ -15,13 +15,7 @@ export default function Sidebar() {
                     <div class="scroll-sidebar">
                         <nav class="sidebar-nav">
                             <ul id="sidebarnav">
-                                <li class="user-profile">
-                                    <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><img src="../assets/images/users/profile.png" alt="user" /><span class="hide-menu">Steave Jobs </span></a>
-                                    <ul aria-expanded="false" class="collapse">
-                                        <li><a href="javascript:void()">Logout</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-devider"></li>
+                            
                                 <li> 
                                    <Link class="has-arrow waves-effect waves-dark" to="/" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Home</span></Link>
                                 </li>

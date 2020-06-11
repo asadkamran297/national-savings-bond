@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Redirect } from 'react-router-dom';
 import {BrowserRouter as Router,Link,Route,Switch} from 'react-router-dom'; 
 import { browserHistory } from 'react-router';
+import GLOBAL from './global.js';
 
 export default class TopNavbar extends Component {
 
@@ -10,14 +11,12 @@ export default class TopNavbar extends Component {
     super(props);
     
     const { history } = this.props;
-    //console.log('here i am : '+history)
 }
 
     onLogout(e){
         
         const { history } = this.props;
 
-        console.log('clicked');
         localStorage.removeItem("login"); 
 
                   history.push({
@@ -63,21 +62,6 @@ export default class TopNavbar extends Component {
                                                         <div class="mail-contnet">
                                                             <h5>Luanch Admin</h5> <span class="mail-desc">Just see the my new admin!</span> <span class="time">9:30 AM</span> </div>
                                                     </a>
-                                                    <a href="#">
-                                                        <div class="btn btn-success btn-circle"><i class="ti-calendar"></i></div>
-                                                        <div class="mail-contnet">
-                                                            <h5>Event today</h5> <span class="mail-desc">Just a reminder that you have event</span> <span class="time">9:10 AM</span> </div>
-                                                    </a>
-                                                    <a href="#">
-                                                        <div class="btn btn-info btn-circle"><i class="ti-settings"></i></div>
-                                                        <div class="mail-contnet">
-                                                            <h5>Settings</h5> <span class="mail-desc">You can customize this template as you want</span> <span class="time">9:08 AM</span> </div>
-                                                    </a>
-                                                    <a href="#">
-                                                        <div class="btn btn-primary btn-circle"><i class="ti-user"></i></div>
-                                                        <div class="mail-contnet">
-                                                            <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span> </div>
-                                                    </a>
                                                 </div>
                                             </li>
                                             <li>
@@ -89,12 +73,12 @@ export default class TopNavbar extends Component {
 
 
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../assets/images/users/1.jpg" alt="user" class="profile-pic" /></a>
+                                    <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src={ GLOBAL.user_image } alt="user" class="profile-pic" /></a>
                                     <div class="dropdown-menu dropdown-menu-right animated flipInY">
                                         <ul class="dropdown-user">
                                             <li>
                                                 <div class="dw-user-box">
-                                                    <div class="u-img"><img src="../assets/images/users/1.jpg" alt="user"/></div>
+                                                    <div class="u-img"><img src={ GLOBAL.user_image } alt="user"/></div>
                                                     <div class="u-text">
                                                         <h4>Steave Jobs</h4>
                                                         <p class="text-muted">var@gmail.com</p><a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>

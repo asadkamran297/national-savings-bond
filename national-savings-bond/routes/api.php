@@ -24,7 +24,7 @@ Auth::routes();
 
 Route::middleware('auth:api')->group(function () {
 
-	Route::get('/bondtype/list','BondTypeController@list')->name('bondtype.list');
+	Route::get('/bondtype/list/{page?}','BondTypeController@list')->name('bondtype.list');
 	Route::post('/bondtype/store','BondTypeController@store')->name('bondtype.store');
 	Route::post('/bondtype/delete','BondTypeController@delete')->name('bondtype.delete');
 

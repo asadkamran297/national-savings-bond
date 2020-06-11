@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\BondType;
+use App\Events\BondTypeInserted;
 
 class BondTypeController extends Controller
 {
@@ -23,16 +24,32 @@ class BondTypeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
 
-    public function list()
+    public function list($page=1)
     {
-        $result=BondType::orderby('amount','DESC')->get();
+        $result='';
+        
+        if($page == 1){
+            $result = BondType::orderby('amount','DESC')->skip(0)->take(5)->get();
+        }
+        else{
+            $result = BondType::orderby('amount','DESC')->skip(($page-1)*5)->take(5)->get();
+        }
+        
+        $total_page = ceil(BondType::count()/5);
+
+        $total_pages=[];
+        
+        for($i=1;$i<=$total_page;$i++){
+            $total_pages[] = $i; 
+        }
         
         if($result)
         {
             return response()->json([
-                'status'  => true,
-                'data'    => $result,
-                'message' => "The Data Sucessfully Retrieved."
+                'status'      => true,
+                'data'        => $result,
+                'total_pages' => $total_pages,
+                'message'     => "The Data Sucessfully Retrieved."
             ]);
         }
     }

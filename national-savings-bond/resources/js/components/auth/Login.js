@@ -73,7 +73,9 @@ onLogin(e){
                const { history } = this.props;
 
               localStorage.setItem("login", "Smith");
+
               GLOBAL.token = res.data.token;
+              GLOBAL.user_image = res.data.image;
 
               history.push({
                 pathname:'/dashboard',
