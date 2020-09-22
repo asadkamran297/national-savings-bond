@@ -4,7 +4,7 @@ import {BrowserRouter as Router,Link,Route,Switch} from 'react-router-dom';
 import TopNavbar from "./TopNavbar";
 import Sidebar from "./Sidebar";
 import Login from "./auth/Login";
-import doSomething from "./helper/functions";
+// import doSomething from "./helper/functions";
 import GLOBAL from './global.js';
 
 
@@ -36,7 +36,7 @@ export default class Home extends Component{
         }
 
         console.log('beer');
-        doSomething();
+        // doSomething();
         console.log(GLOBAL.token);
     }
 

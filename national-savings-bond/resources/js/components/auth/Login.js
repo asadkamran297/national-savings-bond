@@ -70,12 +70,16 @@ onLogin(e){
 
           if(res.data.success)
           {
-               const { history } = this.props;
-
+              const { history } = this.props;
+              
+              localStorage.setItem('token', GLOBAL.token)
               localStorage.setItem("login", "Smith");
+              localStorage.setItem("user_image", res.data.image);
+                console.log(res.data.image);
 
-              GLOBAL.token = res.data.token;
-              GLOBAL.user_image = res.data.image;
+
+            //   GLOBAL.token = res.data.token;
+            //   GLOBAL. = ;
 
               history.push({
                 pathname:'/dashboard',

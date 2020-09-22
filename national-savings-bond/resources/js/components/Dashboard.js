@@ -18,7 +18,7 @@ export default class Dashboard extends Component {
 
     }
 
-    getData(e){
+    getData(e){        
        axios.get(GLOBAL.url+'dashboard/stats',{ headers: { Authorization: `Bearer ${GLOBAL.token}` } })
         .then(response=>{
             console.log(response.data);
