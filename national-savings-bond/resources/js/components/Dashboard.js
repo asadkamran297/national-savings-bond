@@ -6,6 +6,7 @@ import swal from 'sweetalert';
 import {BrowserRouter as Router,Link,Route,Switch} from 'react-router-dom';
 import GLOBAL from './global.js';
 import Pusher from 'pusher-js';
+import Footer from './Footer.js';
 
 export default class Dashboard extends Component {
 
@@ -113,7 +114,7 @@ export default class Dashboard extends Component {
 
                 </div>
 
-                <footer class="footer"> © 2017 Admin Pro by wrappixel.com </footer>
+                <Footer/>
 
             </div>
         );

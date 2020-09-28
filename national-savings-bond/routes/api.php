@@ -26,10 +26,10 @@ Route::middleware('auth:api')->group(function () {
 
 	Route::get('/bondtype/list/{page?}','BondTypeController@list')->name('bondtype.list');
 	Route::post('/bondtype/store','BondTypeController@store')->name('bondtype.store');
-	Route::post('/bondtype/delete','BondTypeController@delete')->name('bondtype.delete');
+	Route::delete('/bondtype/delete','BondTypeController@delete')->name('bondtype.delete');
 
 	Route::get('/bondtype/edit/{id}','BondTypeController@edit')->name('bondtype.edit');
-	Route::post('/bondtype/update','BondTypeController@update')->name('bondtype.update');
+	Route::patch('/bondtype/update','BondTypeController@update')->name('bondtype.update');
 
 	Route::get('/dashboard/stats','DashboardController@stats')->name('dashboard.stats');
 

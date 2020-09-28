@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import GLOBAL from './../global.js';
 import {BrowserRouter as Router,Link,Route,Switch} from 'react-router-dom';
+import Footer from './../Footer.js';
 
 const div_style="form-group";
 const div_style_error="form-group has-danger";
@@ -69,16 +70,16 @@ export default class Add extends Component {
 
        if(this.Validate())
        {
-                  const data = {
+                  /*const data = {
                   id:this.state.id,
                   amount:this.state.amount,
                   status:this.state.status,
                   first_prize:this.state.first_prize,
                   second_prize:this.state.second_prize,
                   third_prize:this.state.third_prize
-              }
+              }*/
               
-              axios.post(GLOBAL.url+'bondtype/update',data,{ headers: { Authorization: `Bearer ${GLOBAL.token}` } })
+              axios.patch(GLOBAL.url+'bondtype/update',this.state,{ headers: { Authorization: `Bearer ${GLOBAL.token}` } })
               .then(res=>{
                     
                     if(res.data.status)
@@ -273,7 +274,7 @@ export default class Add extends Component {
 
                     </div>
 
-                    <footer class="footer"> © 2017 Admin Pro by wrappixel.com </footer>
+                    <Footer/>
 
                 </div>
             );

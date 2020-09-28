@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import GLOBAL from './../global.js';
+import Footer from './../Footer.js';
 import {BrowserRouter as Router,Link,Route,Switch} from 'react-router-dom';
 
 const div_style="form-group";
@@ -34,7 +35,8 @@ export default class Add extends Component {
             third_prize:0,
             third_prize_error:0,
             third_prize_error_message:'',
-            message:''
+            message:'',
+            loading:false
         }
 
         /*this.state.inputs.map( function(item, i) {
@@ -59,15 +61,19 @@ export default class Add extends Component {
 
        if(this.Validate())
        {
-                  const data = {
+                  /*const data = {
                   amount:this.state.amount,
                   status:this.state.status,
                   first_prize:this.state.first_prize,
                   second_prize:this.state.second_prize,
                   third_prize:this.state.third_prize
-              }
-              
-              axios.post(GLOBAL.url+'bondtype/store',data,{ headers: { Authorization: `Bearer ${GLOBAL.token}` } })
+              }*/
+
+              this.setState({
+                   loading: true
+              });
+
+              axios.post(GLOBAL.url+'bondtype/store',this.state,{ headers: { Authorization: `Bearer ${GLOBAL.token}` } })
               .then(res=>{
                     
                     if(res.data.status)
@@ -86,7 +92,8 @@ export default class Add extends Component {
                         {
                             this.setState({
                                    amount_error: 1,
-                                   amount_error_message: res.data.errors.amount[0]
+                                   amount_error_message: res.data.errors.amount[0],
+                                   loading: false
                              });
                         }
                     }
@@ -252,7 +259,12 @@ export default class Add extends Component {
 
                                             </div>
                                             <div class="form-actions">
-                                                <button type="button" onClick={this.onSave.bind(this)} class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
+                                                <button type="button" 
+                                                   onClick={this.onSave.bind(this)} 
+                                                   class="btn btn-success"
+                                                   disabled={this.state.loading}> 
+                                                   <i class="fa fa-check"></i> { this.state.loading ? "Loading..." : "Save"}
+                                                </button>
                                             </div>
                                         </form>
                                     </div>
@@ -263,7 +275,7 @@ export default class Add extends Component {
 
                     </div>
 
-                    <footer class="footer"> © 2017 Admin Pro by wrappixel.com </footer>
+                    <Footer/>
 
                 </div>
             );

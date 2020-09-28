@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import FlashMassage from 'react-flash-message'
 import axios from 'axios';
 import swal from 'sweetalert';
+import Footer from './../Footer.js';
 import {BrowserRouter as Router,Link,Route,Switch} from 'react-router-dom';
 import GLOBAL from './../global.js';
+import { Button,Modal } from 'react-bootstrap';
 
 
 export default class List extends Component {
@@ -16,10 +18,11 @@ export default class List extends Component {
             data:[],
             pages:[],
             message:'',
-            button:'Add'
+            button:'Add',
+            modal:GLOBAL.modal
         }
 
-        console.log(GLOBAL.token);
+        console.log('This is here:   '+this.state.modal);
 
     }
 
@@ -69,6 +72,14 @@ export default class List extends Component {
 
     }
 
+    modalToggle(check){
+        /*this.setState({
+             modal: check
+       });*/
+       GLOBAL.modal = true;
+       console.log(GLOBAL.modal);
+    }
+
     pusher_run(){
         
         // Enable pusher logging - don't include this in production
@@ -114,7 +125,7 @@ export default class List extends Component {
                         id:id
                      }
                     
-                      axios.post(GLOBAL.url+'bondtype/delete',data,{ headers: { Authorization: `Bearer ${GLOBAL.token}` } })
+                      axios.delete(GLOBAL.url+'bondtype/delete',data,{ headers: { Authorization: `Bearer ${GLOBAL.token}` } })
                       .then(res=>{
                             console.log(res.data);
                             if(res.data.status)
@@ -145,6 +156,25 @@ export default class List extends Component {
                                 <div class="col-12">
                                     <div class="card">
                                         <div class="card-body">
+
+                                            <Button variant="primary" onClick={this.modalToggle.bind(this,true)}>
+                                              Launch demo modal
+                                            </Button>
+
+                                            <Modal show={GLOBAL.modal}>
+                                              <Modal.Header closeButton>
+                                                <Modal.Title>Modal heading</Modal.Title>
+                                              </Modal.Header>
+                                              <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                                              <Modal.Footer>
+                                                <Button variant="secondary" onClick={this.modalToggle.bind(this,false)}>
+                                                  Close
+                                                </Button>
+                                                <Button variant="primary">
+                                                  Save Changes
+                                                </Button>
+                                              </Modal.Footer>
+                                            </Modal>
 
                                             <h4 class="card-title">Bond Types</h4>
                                             <h6 class="card-subtitle">This is the listing for Bond types</h6>
@@ -225,9 +255,7 @@ export default class List extends Component {
                             
                         </div>
 
-                        <footer class="footer">
-                            © 2017 Admin Pro by wrappixel.com
-                        </footer>
+                        <Footer name="Jeem" modalchange={this.modalToggle.bind(this)} />
 
                     </div>
 

@@ -58,21 +58,26 @@ onChange(e) {
 
 
 onLogin(e){
-        
-         const login = {
-          email:this.state.email,
-          password:this.state.password,
-      }
 
-      axios.post(GLOBAL.url+'login',login)
+      console.log('************************************************************');
+      console.log(this.state);
+        
+         /*const login = {
+          email:this.state.email,
+          password:this.state.password
+      }*/
+
+      axios.post(GLOBAL.url+'login',this.state)
       .then(res=>{
         console.log(res.data.success);
 
           if(res.data.success)
           {
               const { history } = this.props;
+
+              //console.log(res.data);
               
-              localStorage.setItem('token', GLOBAL.token)
+              localStorage.setItem('token', res.data.token)
               localStorage.setItem("login", "Smith");
               localStorage.setItem("user_image", res.data.image);
                 console.log(res.data.image);
