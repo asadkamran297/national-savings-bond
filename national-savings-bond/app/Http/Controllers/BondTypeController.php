@@ -29,10 +29,10 @@ class BondTypeController extends Controller
         $result='';
         
         if($page == 1){
-            $result = BondType::orderby('amount','DESC')->skip(0)->take(5)->get();
+            $result = BondType::orderby('id','DESC')->skip(0)->take(5)->get();
         }
         else{
-            $result = BondType::orderby('amount','DESC')->skip(($page-1)*5)->take(5)->get();
+            $result = BondType::orderby('id','DESC')->skip(($page-1)*5)->take(5)->get();
         }
         
         $total_page = ceil(BondType::count()/5);
@@ -68,14 +68,23 @@ class BondTypeController extends Controller
         }
     }
 
-    public function delete(Request $request)
+    public function delete($id)
     {
+        //dd($id);
         $rules = [
 
-                'id'=>'required|exists:bond_types,id'
+                'id'=>'required|exists:bond_types,id,deleted_at,NULL'
         ];
 
-        $validator = \Validator::make($request->all(),$rules);  
+        $data = [
+           'id'=>$id
+        ];
+
+        //dd($rules,$data);
+
+        $validator = \Validator::make($data,$rules);  
+
+        //dd($validator->errors());
 
         if($validator->fails()){
             return response()->json([
@@ -84,7 +93,7 @@ class BondTypeController extends Controller
             ],200);
         }
 
-        $result = BondType::where('id',$request->id)->delete();
+        $result = BondType::where('id',$id)->delete();
 
         if($result)
         {
@@ -99,7 +108,7 @@ class BondTypeController extends Controller
     {
         $rules = [
 
-                'amount'=>'required|unique:bond_types,amount',
+                'amount'=>'required|unique:bond_types,amount,NULL,id,deleted_at,NULL',
                 'status'=>'required',
                 'first_prize'=>'required',
                 'second_prize'=>'required',
@@ -137,6 +146,15 @@ class BondTypeController extends Controller
 
     public function update(Request $request)
     {
+        //dd($request->all());
+        //$data = $request->all();
+        //unset($data["_method"]); 
+        $remove = ['id'=>'1','_method'=>'method'];
+        $data = array_diff_key($request->all(),$remove);
+        //$data = array_intersect_key($request->all(),$remove);
+        //dd($remove,$request->all());
+        // dd($data);
+
         $rules = [
                 'id'=>'required|exists:bond_types,id',
                 'amount'=>'required',
@@ -155,13 +173,15 @@ class BondTypeController extends Controller
             ],200);
         }
 
-        $result=BondType::where('id',$request->id)->update([
+        /*$result=BondType::where('id',$request->id)->update([
              'amount'=>$request->amount,
              'status'=>$request->status,
              'first_prize'=>$request->first_prize,
              'second_prize'=>$request->second_prize,
              'third_prize'=>$request->third_prize
-        ]);
+        ]);*/
+
+        $result=BondType::where('id',$request->id)->update($data);
         
         if($result)
         {

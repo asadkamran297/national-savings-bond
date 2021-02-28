@@ -121,11 +121,11 @@ export default class List extends Component {
               if (willDelete) {
                  
                  
-                     const data = {
+                     /*const data = {
                         id:id
-                     }
+                     }*/
                     
-                      axios.delete(GLOBAL.url+'bondtype/delete',data,{ headers: { Authorization: `Bearer ${GLOBAL.token}` } })
+                      axios.delete(GLOBAL.url+'bondtype/delete/'+id,{ headers: { Authorization: `Bearer ${GLOBAL.token}` } })
                       .then(res=>{
                             console.log(res.data);
                             if(res.data.status)

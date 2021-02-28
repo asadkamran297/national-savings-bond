@@ -27,14 +27,29 @@ Route::get('/listener',function(){
     return view('listener');
 });
 
+Route::get('/', [
+    'uses' => 'ReactController@show'
+]);
+
 Route::get('/{path?}', [
-    'uses' => 'ReactController@show',
+    'uses' => 'ReactController@dashboard',
     'as' => 'react',
     'where' => ['path' => '.*']
 ]);
 
+// Route::pattern('path', '[a-zA-Z0-9-/]+');
+// Route::any( '{path}', function( $page ){   
+// 	 //dd($page);
+//      return view('welcome');
+// });
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/factory/user',function(){
+	factory('App\User',10)->create();
+	dd("Done");
+});
 
 

@@ -1,6 +1,8 @@
 import React,{Component,Fragment} from "react";
 import ReactDOM from 'react-dom';
+import { Redirect } from 'react-router-dom';
 import {BrowserRouter as Router,Link,Route,Switch} from 'react-router-dom'; 
+import { browserHistory } from 'react-router'
 import TopNavbar from "./TopNavbar";
 import Sidebar from "./Sidebar";
 import Login from "./auth/Login";
@@ -17,27 +19,29 @@ export default class Home extends Component{
     }
 
     componentDidMount(){
-
-    	
-
+        
         //console.log(this.props.location.state.detail);
-        console.log(localStorage.getItem("lastname"));
-        console.log(localStorage.hasOwnProperty("lastnam"))
-        console.log(this.props.location);
+        //console.log(localStorage.getItem("lastname"));
+        //console.log(localStorage.hasOwnProperty("lastnam"))
+        // const { history } = this.props;
+        // console.log('here i am : '+history)
 
 
-        if(this.props.location.state != undefined)
-        {
-        	  const { history } = this.props;
+        //if(this.props.location.state != undefined)
+        //{
 
-		      history.push({
-		        pathname:'/',
-		     });
-        }
+		     //  history.push({
+		     //    pathname:'/',
+		     // });
+        //}
 
-        console.log('beer');
+        //console.log('jimbo',this.props.history);
         // doSomething();
-        console.log(GLOBAL.token);
+        //console.log(GLOBAL.token);
+
+        if (localStorage.getItem("login") == null) {
+            window.location.href = '/';
+        }
     }
 
 	
@@ -50,7 +54,7 @@ export default class Home extends Component{
 
 					<head>
 
-					    <meta charset="utf-8"/>
+					    <meta charSet="utf-8"/>
 					    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 					    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 					    <meta name="description" content=""/>
@@ -81,8 +85,9 @@ export default class Home extends Component{
 					        
 					        {/*===========Injecting history into nested or child components==========*/}
 
-					        <TopNavbar history={this.props.history} />
-                            <Sidebar/>
+					        {/*<TopNavbar history={this.props.history} />*/}
+					        <TopNavbar />
+                            <Sidebar />
 					        
 					    </div>
 
@@ -130,5 +135,9 @@ export default class Home extends Component{
 
 	
 	
+}
+
+if (document.getElementById('newexample')) {
+    ReactDOM.render(<Home />, document.getElementById('newexample'));
 }
 

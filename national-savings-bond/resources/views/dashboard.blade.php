@@ -1,4 +1,4 @@
-<div id="example"></div>
+<div id="newexample"></div>
 
 <html>
 
@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
-    <title>Admin Pro Admin Template - The Ultimate Bootstrap 4 Admin Template</title>
+    <title>Dashboard</title>
     <link href="{{ asset('assets/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/plugins/chartist-js/dist/chartist.min.css') }}" rel="stylesheet">
@@ -32,7 +32,7 @@
 <body class="fix-header fix-sidebar card-no-border">
 
 
-    <script src="js/app.js"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/bootstrap/js/popper.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/bootstrap/js/bootstrap.min.js') }}"></script>

@@ -5,6 +5,7 @@ import {BrowserRouter as Router,Link,Route,Switch} from 'react-router-dom';
 import { browserHistory } from 'react-router'
 import Home from "./Home";
 import Login from "./auth/Login";
+import BondTypeList from  "./bond_types/List";
 
 //const user=false;
 
@@ -38,7 +39,7 @@ export default class Main extends Component{
 		   	 	<Router>
 		           <Switch>
 		                  <Route exact path='/' component={Login}/>
-		                  <Route exact path='/dashboard' component={Home}/>
+		                  {/*<Route exact path='/dashboard' component={Home}/>*/}
 		           </Switch>
 		        </Router>
            );

@@ -7,6 +7,12 @@ import Example from "./Example";
 import BondTypeList from  "./bond_types/List";
 import BondTypeAdd from  "./bond_types/Add";
 import BondTypeEdit from  "./bond_types/Edit";
+import BondList from  "./bonds/List";
+//import "./imports.js";
+
+
+
+
 
 export default function Sidebar() {
     return (
@@ -22,6 +28,9 @@ export default function Sidebar() {
                                 <li> 
                                    <Link class="has-arrow waves-effect waves-dark" to="/bond/types/list" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Bond Types</span></Link>
                                 </li>
+                                <li> 
+                                   <Link class="has-arrow waves-effect waves-dark" to="/bond/list" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Bonds</span></Link>
+                                </li>
                             </ul>
                         </nav>
                     </div>
@@ -33,6 +42,7 @@ export default function Sidebar() {
                   <Route exact path='/bond/add' component={BondTypeAdd} />
                   <Route exact path='/bond/types/list' component={BondTypeList}/>
                   <Route exact path='/bond/edit/:id' component={BondTypeEdit}/>
+                  <Route exact path='/bond/list' component={BondList} />
                 </Switch>
            </Router>
     );

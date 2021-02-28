@@ -8,20 +8,24 @@ import GLOBAL from './global.js';
 export default class TopNavbar extends Component {
 
     constructor(props) {
-    super(props);
-    
-    const { history } = this.props;
-}
+        super(props);
+        
+        //const { history } = this.props;
+        //console.log('history',this.props.history)
+    }
 
     onLogout(e){
+        console.clear();
+        console.log(this.props.history);
         
-        const { history } = this.props;
+        //const { history } = this.props;
 
-        localStorage.removeItem("login"); 
+       localStorage.removeItem("login"); 
 
-                  history.push({
-                    pathname:'/',
-                 });
+                 //  history.push({
+                 //    pathname:'/',
+                 // });
+        window.location.href = '/';
     }
 
    render(){

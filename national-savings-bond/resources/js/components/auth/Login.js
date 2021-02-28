@@ -36,12 +36,13 @@ constructor(props){
         
         if (localStorage.getItem("login") != null) {
            
-           const { history } = this.props;
+           /*const { history } = this.props;
 
               history.push({
                 pathname:'/dashboard',
-             });
-
+             });*/
+            
+            window.location.href = 'dashboard';
         }
 
     }
@@ -80,16 +81,14 @@ onLogin(e){
               localStorage.setItem('token', res.data.token)
               localStorage.setItem("login", "Smith");
               localStorage.setItem("user_image", res.data.image);
-                console.log(res.data.image);
+              console.log(res.data.image);
 
-
-            //   GLOBAL.token = res.data.token;
-            //   GLOBAL. = ;
-
-              history.push({
+              /*history.push({
                 pathname:'/dashboard',
                 //state: { detail: 'johnny' }
-             });
+             });*/
+
+             window.location.href = 'dashboard';
           }
           else
           {
@@ -100,6 +99,13 @@ onLogin(e){
               });
           }
 
+      }).catch(error=>{
+
+             this.setState({
+                   message: 'The Credidentials Did not Match'
+                },function(){
+                    console.log(error);
+              });
       });
 
 
@@ -119,8 +125,8 @@ onLogin(e){
             <html lang="en">
 
             <head>
-                <meta charset="utf-8"/>
-                <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+                <meta charSet="utf-8"/>
+                <meta httpEquiv="X-UA-Compatible" content="IE=edge"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <meta name="description" content=""/>
                 <meta name="author" content=""/>
@@ -190,3 +196,6 @@ onLogin(e){
     
 }
 
+if (document.getElementById('example')) {
+    ReactDOM.render(<Login />, document.getElementById('example'));
+}

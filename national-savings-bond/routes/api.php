@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+//echo str_replace("public","",$_SERVER['DOCUMENT_ROOT']).'app\Models\Configuration.php';
+
+include(str_replace("public","",$_SERVER['DOCUMENT_ROOT']).'app\Models\Configuration.php');
 
 Auth::routes();
 
@@ -22,15 +25,24 @@ Auth::routes();
     return $request->user();
 });*/
 
-Route::middleware('auth:api')->group(function () {
+$middlewares = [];
+
+if($authentication_api)
+{
+    $middlewares[] = 'auth:api';
+}
+
+Route::middleware($middlewares)->group(function () {
 
 	Route::get('/bondtype/list/{page?}','BondTypeController@list')->name('bondtype.list');
 	Route::post('/bondtype/store','BondTypeController@store')->name('bondtype.store');
-	Route::delete('/bondtype/delete','BondTypeController@delete')->name('bondtype.delete');
+	Route::delete('/bondtype/delete/{id}','BondTypeController@delete')->name('bondtype.delete');
 
 	Route::get('/bondtype/edit/{id}','BondTypeController@edit')->name('bondtype.edit');
 	Route::patch('/bondtype/update','BondTypeController@update')->name('bondtype.update');
 
 	Route::get('/dashboard/stats','DashboardController@stats')->name('dashboard.stats');
+
+	Route::post('/bond/store','BondController@store')->name('bond.store');
 
 });
