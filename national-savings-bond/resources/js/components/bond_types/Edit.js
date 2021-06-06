@@ -10,7 +10,7 @@ const div_style_error="form-group has-danger";
 const form_style="form-control";
 const form_style_error="form-control form-control-danger";
 
-export default class Add extends Component {
+export default class Edit extends Component {
 
     constructor(props){
         super(props);

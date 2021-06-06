@@ -5,7 +5,7 @@ import {BrowserRouter as Router,Link,Route,Switch} from 'react-router-dom';
 import { browserHistory } from 'react-router'
 import Home from "./Home";
 import Login from "./auth/Login";
-import BondTypeList from  "./bond_types/List";
+import BondTypeList from  "./bond_types_hooks/List";
 
 //const user=false;
 
@@ -31,7 +31,7 @@ export default class Main extends Component{
         console.log('hello');*/
         
         const { history } = this.props;
-        console.log('here i am : '+history)
+        console.log('here i am : '+history);
     }
 
 	   render(){

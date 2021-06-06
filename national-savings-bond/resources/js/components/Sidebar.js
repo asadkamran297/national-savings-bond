@@ -4,24 +4,18 @@ import {BrowserRouter as Router,Link,Route,Switch} from 'react-router-dom';
 import Dashboard from "./Dashboard";
 import Main from "./Main";
 import Example from "./Example";
-import BondTypeList from  "./bond_types/List";
-import BondTypeAdd from  "./bond_types/Add";
-import BondTypeEdit from  "./bond_types/Edit";
+import BondTypeList from  "./bond_types_hooks/List";
+import BondTypeAdd from  "./bond_types_hooks/Add";
+import BondTypeEdit from  "./bond_types_hooks/Edit";
 import BondList from  "./bonds/List";
-//import "./imports.js";
 
-
-
-
-
-export default function Sidebar() {
+export default function Sidebar(props) {
     return (
-          <Router>
+          <Router history={props.history}>
                 <aside class="left-sidebar">
                     <div class="scroll-sidebar">
                         <nav class="sidebar-nav">
                             <ul id="sidebarnav">
-                            
                                 <li> 
                                    <Link class="has-arrow waves-effect waves-dark" to="/" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Home</span></Link>
                                 </li>
